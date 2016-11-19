@@ -1,0 +1,26 @@
+<md-card>
+
+    {% if fieldset.title %}
+        <md-toolbar md-scroll-shrink>
+            <div class="md-toolbar-tools">
+                {{ fieldset_title }}
+                {% if fieldset.link %}
+                    <span flex></span>
+                    <md-button class="md-raised md-default fieldset_link" href="{{ fieldset.link.path }}">{{ fieldset.link.label }}</md-button>
+                {% endif %}
+            </div>
+
+            {% if fieldset and fieldset.description %}
+                <p class="form-fieldset-desc">{{ fieldset.description }}</p>
+            {% endif %}
+
+        </md-toolbar>
+    {% endif %}
+
+    <md-card-content>
+        {% for field in fieldset.fields %}
+            {{ field }}
+        {% endfor %}
+    </md-card-content>
+
+</md-card>

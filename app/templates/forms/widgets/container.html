@@ -1,0 +1,7 @@
+<md-input-container flex>
+    {% include field %}
+    <div ng-messages="form.{{ field.id }}.$error" class="form-validation-messages">
+        <div ng-message="server" ng-repeat="error in serverErrors.{{ field.id }} track by $index">{[error]}</div>
+    </div>
+    <span class="help-block">{{ field.description }}</span>
+</md-input-container>
